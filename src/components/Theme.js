@@ -1,6 +1,8 @@
+import { Fab } from '@mui/material';
 import React from 'react'
 import styled from 'styled-components';
-import Bgcolor from './Bgcolor';
+import emojie from '../assets/emojie.svg'
+import { FaGithub, FaLinkedinIn } from "react-icons/fa"
 
 
 const ThemeStyle = styled.div`
@@ -10,101 +12,79 @@ const ThemeStyle = styled.div`
     font-family:'Nexa Bold';
     color:white;
     text-align:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+
+    .emojie{
+        width:15rem;
+    }
 
     .container{
-        width:100%;
-        height:80vh;
+        z-index:2;
+        height:70vh;
+        margin-bottom:6rem;
+        width:80%;
         display:flex;
+        justify-content:center;
         flex-direction:column;
+        background: rgba( 5, 5, 5, 0.2 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 16px );
+        -webkit-backdrop-filter: blur( 16px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
 
         h2{
             margin-bottom:4rem;
         }
     }
 
-    .color-red{
-        width:2.5rem;
-        height:2.5rem;
-        background-color:#c20000;
-        opacity:0.4;
-        border-radius:1rem;
-        border:3px solid white;
+    h3{
+        line-height:30px;
     }
 
-    .color-black{
-        width:2.5rem;
-        height:2.5rem;
-        background-color:#000000;
-        opacity:0.4;
-        border-radius:1rem;
-        border:3px solid white;
+    .fab-icon{
+        padding: 0 1rem;
     }
 
-    .color-blue{
-        width:2.5rem;
-        height:2.5rem;
-        background-color:#000f94;
-        opacity:0.4;
-        border-radius:1rem;
-        border:3px solid white;
+
+    .custom-msg{
+        max-width:500px;
+        padding: 0 2rem;
     }
 
-    .color-green{
-        border:3px solid white;
-        width:2.5rem;
-        height:2.5rem;
-        background-color:#137000;
-        opacity:0.4;
-        border-radius:1rem;
+    .social-btn{
+        margin-top:1rem;
     }
-
-    .color-container{
-        display:flex;
-        justify-content:space-around;
-        width:600px;
-    }
-
 
     @media only screen and (max-width: 768px) {
 
-        .color-container{
-            display:flex;
-            flex-direction:column;
-            justify-content:space-between;
-            align-items:center;
-            height:300px;
-            width:400px;
+        h3{
+            font-size:1rem;
+            margin-top:-1rem;
         }
 
 
-        .container{
-        width:100%;
-        height:80vh;
-        display:flex;
-        flex-direction:column;
-
-        h2{
-            margin-bottom:4rem;
-        }
     }
-
-    }
-
 `;
 
 export default function Theme() {
     return (
         <ThemeStyle>
             <div className="container">
-                <h2>Choose a color:</h2>
-                <Bgcolor />
-
-                {/* <div className="color-container">
-                    <div className="color-red"></div>
-                    <div className="color-blue"></div>
-                    <div className="color-green"></div>
-                    <div className="color-black"></div>
-                </div> */}
+                <img src={emojie} alt="emojie" className="emojie" />
+                <h3 className="custom-msg">Uh ho.. !! <br /> Seems like developer forgot to complete this part. <br /> No worries, you can contact the developer and remind him to complete it.</h3>
+            
+                <Fab href="https://www.github.com/aneeshawadhiya/" className="social-btn" variant="extended" size="medium" color="#1b1b1b" aria-label="home">
+                    <FaGithub className="fab-icon"/>
+                      Github  
+                </Fab>
+                <Fab href="https://www.linkedin.com/in/aneeshawadhiya/" className="social-btn" variant="extended" size="medium" color="#1b1b1b" aria-label="home">
+                    <FaLinkedinIn className="fab-icon"/> 
+                      LinkedIN  
+                </Fab>
             </div>
         </ThemeStyle>
     )

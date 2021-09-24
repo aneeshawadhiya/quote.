@@ -9,13 +9,18 @@ import React from 'react'
 const HomeStyle = styled.div`
 
     height:100vh;
-    margin:0;
+    margin-top:1rem;
     font-family: 'Nexa Regular';
     width:100%;
     
     h1{
         color:white;
         margin:0;
+    }
+
+
+    @media only screen and (max-width:500px){
+        margin-top:2rem;
     }
 `;
 
