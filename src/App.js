@@ -10,7 +10,7 @@ import {RemoveScrollBar} from 'react-remove-scroll-bar';
 
 const AppStyle = styled.div`
 
-    background: linear-gradient(154deg, #ff052ffd, #000000);
+    background: linear-gradient(154deg, #595959, #000000);
     background-size: 140% 140%;
 
     -webkit-animation: animation 35s ease infinite;

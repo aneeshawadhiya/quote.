@@ -19,7 +19,7 @@ const NavMenuStyles = styled.div`
 
   padding: 0;
     .hide-item {
-      transform: translateY(calc(-160%));
+      transform: translateY(calc(-180%));
     }
 
     .mobile-menu-icon {
@@ -38,6 +38,8 @@ const NavMenuStyles = styled.div`
     }
 
     .navItems {
+      z-index:10;
+
       --top: 6rem;
       transition: 0.3s ease transform;
       background: #272727;
@@ -58,7 +60,7 @@ const NavMenuStyles = styled.div`
   @media only screen and (max-width: 768px) {
     padding: 0;
     .hide-item {
-      transform: translateY(calc(-150%));
+      transform: translateY(calc(-160%));
     }
 
     .active {
@@ -80,6 +82,7 @@ const NavMenuStyles = styled.div`
     }
 
     .navItems {
+      z-index:10;
       --top: 6rem;
       transition: 0.3s ease transform;
       background: #272727;
@@ -149,19 +152,6 @@ export default function NavMenu() {
             explore
           </NavLink>
         </li>
-
-        <li>
-          <NavLink
-            to="/liked"
-            exact
-            onClick={() => SetShowNav(!showNav)}
-            role="button"
-            onKeyDown={() => SetShowNav(!showNav)}
-            tabIndex={0}
-          >
-            liked
-          </NavLink>
-        </li>
         
         <li>
           <NavLink
@@ -184,19 +174,6 @@ export default function NavMenu() {
             tabIndex={0}
           >
             about
-          </NavLink>
-        </li>
-
-
-        <li>
-          <NavLink
-            to="/developer"
-            onClick={() => SetShowNav(!showNav)}
-            role="button"
-            onKeyDown={() => SetShowNav(!showNav)}
-            tabIndex={0}
-          >
-            <HiCode />
           </NavLink>
         </li>
 
