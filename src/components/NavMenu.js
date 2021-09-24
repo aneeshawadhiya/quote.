@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import { HiCode } from 'react-icons/hi';
 import { FiChevronDown } from 'react-icons/fi';
 // import { CgClose } from 'react-icons/cg';
 // import Typography from '../fonts/Typography';
