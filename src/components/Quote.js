@@ -38,13 +38,21 @@ const QuoteStyle = styled.div`
             font-size: 12px;
         }
     }
+
+    #box1{
+        width:400px;
+        height:300px;
+        border:1px solid black;
+    }
 `;
 
 
 
 export default function Quote() {
+    
+    
     return (
-        <QuoteStyle>
+        <QuoteStyle id="Quote-Screenshot-Section">
             <div className="quote-section">
                 <div className="innerQuote">
                     <h1>

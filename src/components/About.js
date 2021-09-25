@@ -6,6 +6,7 @@ import './about.css'
 import pattern from '../assets/pattern.svg'
 import { Fab } from '@mui/material';
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa"
+import { useHistory } from 'react-router-dom';
 
 const AboutStyle = styled.div`
     width:100%;
@@ -177,14 +178,22 @@ const AboutStyle = styled.div`
 
 
 export default function About() {
+
+    const history = useHistory()
+
+    const routeChange = () =>{ 
+        let path = `/home`; 
+        history.push(path);
+      }
     return (
         <AboutStyle>
+
             <div className="AboutSection">
                 <h1 className="text-pop-up-top">quote.</h1>
                 <p>is an webapp for display of Inspirational quotations<br />
                 It selects a quote at random from its database and displays it on the home screen.<br /><br />🎉</p>
                 <p></p>
-                <Fab href="/home" variant="extended" size="medium" color="#1b1b1b" aria-label="home">
+                <Fab onClick={routeChange} variant="extended" size="medium" color="#1b1b1b" aria-label="home">
                     <FaQuoteLeft className="fab-icon"/>
                       read a quote  
                     <FaQuoteRight className="fab-icon"/>

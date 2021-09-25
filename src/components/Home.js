@@ -6,6 +6,8 @@ import React from 'react'
 
 
 
+
+
 const HomeStyle = styled.div`
 
     height:100vh;
@@ -27,8 +29,9 @@ const HomeStyle = styled.div`
 
 
 export default function Home() {
+    
     return (
-            <HomeStyle >
+        <HomeStyle>
                 <Quote/>
             </HomeStyle>
     )
