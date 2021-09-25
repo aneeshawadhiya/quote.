@@ -103,12 +103,13 @@ const ThemeStyle = styled.div`
         //cider
         .sq5{
             background: linear-gradient(154deg, #f2a65a, #000000);
+           
         } 
 
 
-        //pride
+        //popstar
         .sq6{
-            background: linear-gradient(to right top, #c717d8, #3c7dff, #00a9ff, #00c4f8, #00d7d1, #54d8aa, #8ad481, #bccc60, #ddb24a, #f69550, #ff766a, #fb5f8e);
+            background: linear-gradient(154deg, #b2505c, #000000);
         } 
     }
 
@@ -206,7 +207,7 @@ export default function Theme() {
                             </div>
                             
                             </div>
-                        <div className="square sq2" onClick={()=> setBackground("#166d3b")}>
+                        <div className="square sq2" onClick={()=> setBackground("#237A57")}>
                             <div className="color-names">
                                 <p>pine</p>
                             </div>
@@ -229,9 +230,9 @@ export default function Theme() {
                                 <p>cider</p>
                             </div>
                         </div>
-                        <div className="square sq6" onClick={()=> setBackground("#02a388")}>
+                        <div className="square sq6" onClick={()=> setBackground("#b2505c")}>
                             <div className="color-names">
-                                <p>pride</p>
+                                <p>popstar</p>
                             </div>
                         </div>
                         
