@@ -84,7 +84,11 @@ const [background , setBackground] = useState('#414141');
                   </Route>
                   <Route path="/home">
                     <Home />
-                    <Button color="secondary" className="savebtn" onClick={exportImage}>CLICK TO DONWLOAD</Button>
+                    <div className="downdiv">
+                        <Fab style={{backgroundColor: `${background}` , color:"white"}}  size="small" aria-label="download" className="down-fab" onClick={exportImage} >
+                            <HiDownload />
+                        </Fab>
+                    </div>
                   </Route>
                   <Route path="/">
                     <Home />
