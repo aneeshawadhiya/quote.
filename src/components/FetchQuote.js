@@ -68,6 +68,7 @@ export default class FetchQuote extends React.Component {
                     <Fab color="#f7f7f7" aria-label="random" className="floating-btn" onClick={this.changeQuote} >
                         <IoIosQuote />
                     </Fab>
+                    
             </div>
             </>
         )

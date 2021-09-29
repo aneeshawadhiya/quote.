@@ -9,45 +9,17 @@ import styled from 'styled-components'
 import UnderDevelopement from './components/UnderDevelopement';
 import React, { useState } from 'react';
 import AppContext from './components/AppContext';
-
-
-// let bg = "";
-
-
-// const bgColors = {
-//   teal: false,
-//   pine:false,
-//   rose:false,
-//   dark:false,
-//   cider:true,
-//   pride:false
-// };
-
-
-// function setBack(){
-//   if(bgColors.dark){
-//     bg = "#595959";
-//   }else if(bgColors.pine){
-//     bg = "#02a388";
-//   }else if(bgColors.rose){
-//     bg = "#b02e0c";
-//   }else if(bgColors.teal){
-//     bg = "#537895";
-//   }else if(bgColors.cider){
-//     bg = "#f2a65a";
-//   }else if(bgColors.pride){
-//     bg = "#02a388";
-//   }
-// }
-
+import { Button } from '@mui/material';
+import { exportComponentAsPNG } from 'react-component-export-image';
+import './app.css';
+import Fab from '@mui/material/Fab';
+import { HiDownload } from 'react-icons/hi';
 
 const AppStyle = styled.div`
 
-    /* background-size: 140% 140%;
     -webkit-animation: animation 25s ease infinite;
     -moz-animation: animation 25s ease infinite;
     animation: animation 25s ease infinite;
-
 
     @-webkit-keyframes animation {
         0%{background-position:27% 0%}
@@ -64,8 +36,6 @@ const AppStyle = styled.div`
         50%{background-position:74% 100%}
         100%{background-position:27% 0%}
     }
- */
-
 
     @media only screen and (max-width: 500px) {
 
@@ -77,38 +47,56 @@ const AppStyle = styled.div`
   
 `;
 
-
-
 function App() {
 
-  const [background , setBackground] = useState('#414141');
 
+const homeRef = React.createRef();
+const [background , setBackground] = useState('#414141'); 
+
+  const styles = {
+    background: `linear-gradient(154deg, ${background}, #000000)`,
+    backgroundSize: '140% 140%', 
+  }
+
+  function exportImage(){
+    exportComponentAsPNG(homeRef,{
+      fileName:"quotes"
+    })
+  }
+
+  
+ 
   return (
       <AppContext.Provider value={{background, setBackground}}>
-    <AppStyle style={{
-      background: `linear-gradient(154deg, ${background}, #000000)`}}>
-        <Router>
-            <NavMenu />
-            <Switch>
-              <Route path="/explore">
-                {/* <Categories /> */}
-                <UnderDevelopement />
-              </Route>
-              <Route path="/theme">
-                <Theme />
-              </Route>
-              <Route path="/about">
-                <About />
-              </Route>
-              <Route path="/home">
-                <Home />
-              </Route>
-              <Route path="/">
-                <Home />
-              </Route>
-            </Switch>
-        </Router>
-    </AppStyle>
+        <AppStyle style={styles} ref={homeRef}>
+            <Router>
+                <NavMenu />
+                <Switch>
+                  <Route path="/explore">
+                    {/* <Categories /> */}
+                    <UnderDevelopement />
+                  </Route>
+                  <Route path="/theme">
+                    <Theme />
+                  </Route>
+                  <Route path="/about">
+                    <About />
+                  </Route>
+                  <Route path="/home">
+                    <Home />
+                    <Button color="secondary" className="savebtn" onClick={exportImage}>CLICK TO DONWLOAD</Button>
+                  </Route>
+                  <Route path="/">
+                    <Home />
+                    <div className="downdiv">
+                        <Fab style={{backgroundColor: `${background}` , color:"white"}}  size="small" aria-label="download" className="down-fab" onClick={exportImage} >
+                            <HiDownload />
+                        </Fab>
+                    </div>
+                  </Route>
+                </Switch>
+            </Router>
+        </AppStyle>
       </AppContext.Provider>
   );
 }

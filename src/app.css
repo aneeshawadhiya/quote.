@@ -1,0 +1,12 @@
+.downdiv{
+    background:white;
+    display:flex;
+    height:0;
+    justify-content:center;
+}
+
+
+.down-fab{
+    position:absolute;
+    bottom:22vh;
+}
